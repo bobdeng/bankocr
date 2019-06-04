@@ -47,11 +47,6 @@ public class Account {
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(charList);
-    }
-
-    @Override
     public String toString() {
         return charList.stream()
                 .map(DigitalChar::toString)

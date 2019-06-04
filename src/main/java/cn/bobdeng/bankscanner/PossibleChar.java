@@ -17,15 +17,6 @@ public class PossibleChar {
         charConsumer.accept(source);
     }
 
-    @Override
-    public String toString() {
-        return chars.toString();
-    }
-
-    public boolean isSource(DigitalChar digitalChar) {
-        return source.equals(digitalChar);
-    }
-
     public boolean hasPossible() {
         return chars.size()>=1;
     }

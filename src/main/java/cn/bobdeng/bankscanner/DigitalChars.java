@@ -69,6 +69,6 @@ public class DigitalChars {
     }
 
     public static void main(String[] args) {
-        System.out.println(getCharsLines("345882865"));
+        System.out.println(getCharsLines("111111111"));
     }
 }

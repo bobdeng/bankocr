@@ -1,0 +1,4 @@
+
+Xsquid:S1444"7Make this "public static accountRepository" field final(ñ–’òúÿÿÿÿ8¶ÿÈÓ«-
+•"squid:ClassVariableVisibilityCheck"]Make accountRepository a static final constant or non-public and provide accessors if needed.(ñ–’òúÿÿÿÿ8¶ÿÈÓ«-
+Vsquid:S1118":Add a private constructor to hide the implicit public one.(êÕŒ‚8¶ÿÈÓ«-

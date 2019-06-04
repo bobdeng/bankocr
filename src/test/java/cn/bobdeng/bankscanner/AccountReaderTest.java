@@ -26,7 +26,7 @@ public class AccountReaderTest {
         accountRepository.lines= Arrays.asList(getLines());
         Accounts accounts = Accounts.read();
         assertNotNull(accounts);
-        assertEquals(accounts.size(),1);
+        assertEquals(accounts.size(),2);
         assertEquals(accounts.get(0),new Account("123456789"));
         assertEquals(accounts.get(1),new Account("183456789"));
     }

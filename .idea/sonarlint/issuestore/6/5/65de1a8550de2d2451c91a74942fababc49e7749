@@ -1,0 +1,3 @@
+
+[squid:UselessImportCheck	"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8®«ùÓ«-
+Ysquid:S2696"6Make the enclosing method "static" or remove this set.(¢³¨ìûÿÿÿÿ8®«ùÓ«-

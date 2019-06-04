@@ -12,7 +12,11 @@ public class Accounts {
         this.accounts = accounts;
     }
 
-    public Accounts() {
+    private Accounts() {
+        readAccounts();
+    }
+
+    private void readAccounts() {
         accounts = new ArrayList<>();
         List<String> lines = Repositories.accountRepository.readLines();
         ListIterator<String> listIterator = lines.listIterator();
@@ -26,11 +30,13 @@ public class Accounts {
 
 
     public static Accounts read() {
-        return new Accounts();
+        Accounts accounts= new Accounts();
+        accounts.readAccounts();
+        return accounts;
     }
 
     public int size() {
-        return 1;
+        return accounts.size();
     }
 
     public Account get(int index) {
@@ -41,28 +47,31 @@ public class Accounts {
         return accounts.stream()
                 .map(account -> {
                     account.tryCorrect();
-                    String result = account.toString();
-                    if (!account.isValid()) {
-                        account.tryCorrect();
-                        if(account.isHasMoreThanOnePossible()){
-                            return result+" AMB";
-                        }
-                        if (account.hasUnrecognized()) {
-                            return result + " ERR";
-                        }
-                        return result + " ILL";
-                    }
-                    return result;
+                    return getAccountOutput(account);
                 })
                 .collect(Collectors.toList());
+    }
+
+    private String getAccountOutput(Account account) {
+        StringBuffer  result= new StringBuffer(account.toString());
+        if (!account.isValid()) {
+            return addFailTail(account, result);
+        }
+        return result.toString();
+    }
+
+    private String addFailTail(Account account, StringBuffer result) {
+        if(account.isHasMoreThanOnePossible()){
+            return result+" AMB";
+        }
+        if (account.hasUnrecognized()) {
+            return result + " ERR";
+        }
+        return result + " ILL";
     }
 
     public void add(Account account) {
         accounts.add(account);
     }
 
-    @Override
-    public String toString() {
-        return accounts.toString();
-    }
 }

@@ -28,7 +28,7 @@ public class AccountsOutputTest {
         List<String> inputLines=new ArrayList<>();
         inputLines.addAll(DigitalChars.getCharsLines("345882865"));
         accountRepository.lines=inputLines;
-        Accounts accounts=new Accounts();
+        Accounts accounts=Accounts.read();
 
         List<String> lines = accounts.toLines();
         assertTrue(lines.contains("345882865"));
@@ -39,7 +39,7 @@ public class AccountsOutputTest {
         List<String> inputLines=new ArrayList<>();
         inputLines.addAll(DigitalChars.getCharsLines("111111111"));
         accountRepository.lines=inputLines;
-        Accounts accounts=new Accounts();
+        Accounts accounts=Accounts.read();
         List<String> lines = accounts.toLines();
         assertTrue(lines.contains("711111111"));
     }
@@ -48,7 +48,7 @@ public class AccountsOutputTest {
         List<String> inputLines=new ArrayList<>();
         inputLines.addAll(DigitalChars.getCharsLines("345682865"));
         accountRepository.lines=inputLines;
-        Accounts accounts=new Accounts();
+        Accounts accounts=Accounts.read();
         List<String> lines = accounts.toLines();
         assertTrue(lines.contains("345682865 AMB"));
     }
@@ -58,8 +58,21 @@ public class AccountsOutputTest {
         List<String> inputLines=new ArrayList<>();
         inputLines.addAll(DigitalChars.getCharsLines("991111118"));
         accountRepository.lines=inputLines;
-        Accounts accounts=new Accounts();
+        Accounts accounts=Accounts.read();
         List<String> lines = accounts.toLines();
         assertTrue(lines.contains("991111118 ILL"));
+    }
+
+    @Test
+    public void test_wrong_with_error() {
+        List<String> inputLines=new ArrayList<>();
+        inputLines.add("                           ");
+        inputLines.add("     |  |  |  |  |  |  |  |");
+        inputLines.add("     |  |  |  |  |  |  |  |");
+        inputLines.add("");
+        accountRepository.lines=inputLines;
+        Accounts accounts=Accounts.read();
+        List<String> lines = accounts.toLines();
+        assertTrue(lines.contains("?11111111 ERR"));
     }
 }

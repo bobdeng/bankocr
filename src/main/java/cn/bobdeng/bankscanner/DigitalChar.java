@@ -25,10 +25,6 @@ public class DigitalChar {
         return character == that.character;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(String.valueOf(character));
-    }
 
     @Override
     public String toString() {
