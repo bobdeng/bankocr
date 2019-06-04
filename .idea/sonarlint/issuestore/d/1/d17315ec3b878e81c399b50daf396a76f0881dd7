@@ -1,7 +1,0 @@
-
-dsquid:S4034I"FReplace this "filter().findAny().isPresent()" chain with "anyMatch()".(æ£°8§ºœÕ«-
-jsquid:S00103"KSplit this 127 characters long line (which is greater than 120 authorized).(„ûÅ8İ—çÜ«-
-gsquid:S2184’"CCast one of the operands of this subtraction operation to a "long".(øğ¤›üÿÿÿÿ8¯¦÷Ü«-
-Psquid:S1602€",Remove useless curly braces around statement(šƒÆ™ûÿÿÿÿ8öºëÜ«-
-psquid:S00103…"KSplit this 124 characters long line (which is greater than 120 authorized).(İİÕáøÿÿÿÿ8ŒÈéÜ«-
-ssquid:S1206*"PThis class overrides "equals()" and should therefore also override "hashCode()".(İ¢êÍıÿÿÿÿ8Ğ«‰İ«-
